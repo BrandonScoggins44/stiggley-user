@@ -29,7 +29,7 @@ public class StiggleyUserTest extends TestDriver {
 
 	@Test
 	public void canAddUser() {
-		StiggleyUser newUser = new StiggleyUser(0, "Christian", "DeFaria", "cd@gmail.com");
+		StiggleyUser newUser = new StiggleyUser(0, "cd@gmail.com", "Christian", "DeFaria");
 
 		JsonObject json = new JsonObject();
 		json.addProperty("user", newUser.toString());
@@ -41,7 +41,7 @@ public class StiggleyUserTest extends TestDriver {
 
 	@Test
 	public void canGetUserByEmail() {
-		StiggleyUser newUser = new StiggleyUser(0, "Dillon", "Qsee", "dillonq@revature.com");
+		StiggleyUser newUser = new StiggleyUser(0, "dillonq@revature.com", "Dillon", "Qsee");
 
 		JsonObject json = new JsonObject();
 		json.addProperty("user", newUser.toString());
@@ -55,7 +55,7 @@ public class StiggleyUserTest extends TestDriver {
 
 	@Test
 	public void canNotGetUserByEmail() {
-		StiggleyUser newUser = new StiggleyUser(1, "Brandon", "Scoggins", "bs@gmail.com");
+		StiggleyUser newUser = new StiggleyUser(1, "bs@gmail.com", "Brandon", "Scoggins");
 
 		JsonObject json = new JsonObject();
 		json.addProperty("user", newUser.toString());
@@ -69,7 +69,7 @@ public class StiggleyUserTest extends TestDriver {
 
 	@Test
 	public void canGetUserById() {
-		StiggleyUser testUser = new StiggleyUser(4, "Dillon", "Qsee", "dillonq@revature.com");
+		StiggleyUser testUser = new StiggleyUser(4, "dillonq@revature.com", "Dillon", "Qsee");
 		StiggleyUser user = RestAssured.get(url + "/4").body().as(StiggleyUser.class);
 
 		assertEquals(testUser, user);
@@ -78,7 +78,7 @@ public class StiggleyUserTest extends TestDriver {
 
 	@Test
 	public void canUpdateUser() {
-		StiggleyUser updatedUser = new StiggleyUser(4, "Dillon", "Qsee", "dillonq@revature.com");
+		StiggleyUser updatedUser = new StiggleyUser(4, "dillonq@revature.com", "Dillon", "Qsee");
 
 		JsonObject json = new JsonObject();
 		json.addProperty("user", updatedUser.toString());

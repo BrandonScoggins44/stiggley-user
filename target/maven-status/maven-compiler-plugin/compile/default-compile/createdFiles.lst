@@ -1,7 +1,5 @@
-com\revature\services\BamUserService.class
-com\revature\models\BamUser.class
-com\revature\models\Role.class
-com\revature\controllers\BamUserController.class
-com\revature\models\Status.class
-com\revature\repositories\BamUserRepository.class
-com\revature\Application.class
+com\stiggley\Application.class
+com\stiggley\repositories\StiggleyUserRepository.class
+com\stiggley\controllers\StiggleyUserController.class
+com\stiggley\models\StiggleyUser.class
+com\stiggley\services\StiggleyUserService.class
