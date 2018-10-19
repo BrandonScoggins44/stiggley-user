@@ -16,59 +16,47 @@ import org.springframework.stereotype.Component;
 
 @Entity
 @Component
-@Table(name="BAM_USER")
-@SequenceGenerator(name="bam_user_seq_name", sequenceName="bam_user_seq", initialValue=5, allocationSize=1)
+@Table(name = "STIGGLEY_USER")
+@SequenceGenerator(name = "stiggley_user_seq_name", sequenceName = "stiggley_user_seq", initialValue = 5, allocationSize = 1)
 public class StiggleyUser implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
-	@Column(name="id")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="bam_user_seq_name")
+	@Column(name = "id")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "stiggley_user_seq_name")
 	private Integer id;
-	
-	@NotNull
-	@Column(name="firstname")
-	private String firstname;
-	
-	@NotNull
-	@Column(name="lastname")
-	private String lastname;
-	
+
 	@Email
 	@NotNull
-	@Column(name="email", unique=true)
+	@Column(name = "email", unique = true)
 	private String email;
-	
+
 	@NotNull
-	@Column(name="role_id")
-	private Integer role_id;
-	
+	@Column(name = "username")
+	private String username;
+
 	@NotNull
-	@Column(name="status_id")
-	private Integer status_id;
-	
+	@Column(name = "password")
+	private String password;
+
 	public StiggleyUser() {
-		
+
 	}
 
-	public StiggleyUser(String firstname, String lastname, String email, int role_id, int status_id) {
+	public StiggleyUser(String email, String username, String password) {
 		super();
-		this.firstname = firstname;
-		this.lastname = lastname;
 		this.email = email;
-		this.role_id = role_id;
-		this.status_id = status_id;
+		this.username = username;
+		this.password = password;
 	}
 
-	public StiggleyUser(int id, String firstname, String lastname, String email, int role_id, int status_id) {
+	public StiggleyUser(Integer id, String email, String username, String password) {
 		super();
 		this.id = id;
-		this.firstname = firstname;
-		this.lastname = lastname;
 		this.email = email;
-		this.role_id = role_id;
-		this.status_id = status_id;
+		this.username = username;
+		this.password = password;
 	}
 
 	public int getId() {
@@ -79,22 +67,6 @@ public class StiggleyUser implements Serializable {
 		this.id = id;
 	}
 
-	public String getFirstname() {
-		return firstname;
-	}
-
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
-	}
-
-	public String getLastname() {
-		return lastname;
-	}
-
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
-	}
-
 	public String getEmail() {
 		return email;
 	}
@@ -103,20 +75,20 @@ public class StiggleyUser implements Serializable {
 		this.email = email;
 	}
 
-	public int getRole_id() {
-		return role_id;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setRole_id(int role_id) {
-		this.role_id = role_id;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
-	public int getStatus_id() {
-		return status_id;
+	public String getPassword() {
+		return password;
 	}
 
-	public void setStatus_id(int status_id) {
-		this.status_id = status_id;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	@Override
@@ -124,11 +96,9 @@ public class StiggleyUser implements Serializable {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((email == null) ? 0 : email.hashCode());
-		result = prime * result + ((firstname == null) ? 0 : firstname.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + ((lastname == null) ? 0 : lastname.hashCode());
-		result = prime * result + ((role_id == null) ? 0 : role_id.hashCode());
-		result = prime * result + ((status_id == null) ? 0 : status_id.hashCode());
+		result = prime * result + ((password == null) ? 0 : password.hashCode());
+		result = prime * result + ((username == null) ? 0 : username.hashCode());
 		return result;
 	}
 
@@ -146,38 +116,28 @@ public class StiggleyUser implements Serializable {
 				return false;
 		} else if (!email.equals(other.email))
 			return false;
-		if (firstname == null) {
-			if (other.firstname != null)
-				return false;
-		} else if (!firstname.equals(other.firstname))
-			return false;
 		if (id == null) {
 			if (other.id != null)
 				return false;
 		} else if (!id.equals(other.id))
 			return false;
-		if (lastname == null) {
-			if (other.lastname != null)
+		if (password == null) {
+			if (other.password != null)
 				return false;
-		} else if (!lastname.equals(other.lastname))
+		} else if (!password.equals(other.password))
 			return false;
-		if (role_id == null) {
-			if (other.role_id != null)
+		if (username == null) {
+			if (other.username != null)
 				return false;
-		} else if (!role_id.equals(other.role_id))
-			return false;
-		if (status_id == null) {
-			if (other.status_id != null)
-				return false;
-		} else if (!status_id.equals(other.status_id))
+		} else if (!username.equals(other.username))
 			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "StiggleyUser [id=" + id + ", firstname=" + firstname + ", lastname=" + lastname + ", email=" + email
-				+ ", role_id=" + role_id + ", status_id=" + status_id + "]";
+		return "StiggleyUser [id=" + id + ", email=" + email + ", username=" + username + ", password=" + password
+				+ "]";
 	}
-	
+
 }

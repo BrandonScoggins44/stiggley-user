@@ -15,7 +15,7 @@ public interface StiggleyUserRepository extends JpaRepository<StiggleyUser, Inte
 	*@return The StiggleyUser with the given Id.
 	*@author Brandon Scoggins, Batch: 1806-Jun18-Java-USF, Trainer: Wezley Singleton
 	*/
-	StiggleyUser findBamUserById(int id);
+	StiggleyUser findStiggleyUserById(int id);
 
 	/**
 	* Retrieve a StiggleyUser from a database by their email.
@@ -24,5 +24,5 @@ public interface StiggleyUserRepository extends JpaRepository<StiggleyUser, Inte
 	*@return The StiggleyUser with the given email.
 	*@author Brandon Scoggins, Batch: 1806-Jun18-Java-USF, Trainer: Wezley Singleton
 	*/
-	StiggleyUser findBamUserByEmail(String email);
+	StiggleyUser findStiggleyUserByEmail(String email);
 }

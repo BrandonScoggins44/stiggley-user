@@ -1,26 +1,10 @@
-DROP TABLE IF EXISTS role CASCADE;
-CREATE TABLE IF NOT EXISTS role
+DROP TABLE IF EXISTS stiggley_user CASCADE;
+CREATE TABLE IF NOT EXISTS stiggley_user
 (id INTEGER NOT NULL,
-role VARCHAR(25) UNIQUE,
-PRIMARY KEY (id));
-
-DROP TABLE IF EXISTS status CASCADE;
-CREATE TABLE IF NOT EXISTS status
-(id INTEGER NOT NULL,
-status VARCHAR(25) UNIQUE,
-PRIMARY KEY (id));
-
-DROP TABLE IF EXISTS bam_user CASCADE;
-CREATE TABLE IF NOT EXISTS bam_user
-(id INTEGER NOT NULL,
-firstname VARCHAR(25) NOT NULL,
-lastname VARCHAR(25) NOT NULL,
+username VARCHAR(25) UNIQUE NOT NULL,
+password VARCHAR(25) NOT NULL,
 email VARCHAR(255) UNIQUE NOT NULL,
-role_id INTEGER,
-status_id INTEGER,
-PRIMARY KEY (id),
-foreign key (role_id) references role(id),
-foreign key (status_id) references status(id));
+PRIMARY KEY (id));
 
-DROP SEQUENCE IF EXISTS bam_user_seq;
-CREATE SEQUENCE IF NOT EXISTS bam_user_seq START WITH 5;
+DROP SEQUENCE IF EXISTS stiggley_user_seq;
+CREATE SEQUENCE IF NOT EXISTS stiggley_user_seq START WITH 5;
