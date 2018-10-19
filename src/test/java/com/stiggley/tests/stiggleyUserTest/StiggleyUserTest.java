@@ -1,4 +1,4 @@
-package com.revature.tests.bamUserTest;
+package com.stiggley.tests.stiggleyUserTest;
 
 import static org.junit.Assert.assertEquals;
 
@@ -9,16 +9,16 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.google.gson.JsonObject;
-import com.revature.tests.TestDriver;
 import com.stiggley.Application;
 import com.stiggley.models.StiggleyUser;
+import com.stiggley.tests.TestDriver;
 
 import io.restassured.RestAssured;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringBootTest(classes=TestDriver.class, properties="/pebbles-user/src/test/resources/application.properties", webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
+@SpringBootTest(classes=TestDriver.class, properties="/stiggley-user/src/test/resources/application.properties", webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 @ContextConfiguration(classes=Application.class)
-public class BamUserTest extends TestDriver {
+public class StiggleyUserTest extends TestDriver {
 
 	static String url = "http://localhost:9998";
 

@@ -1,4 +1,5 @@
-package com.revature.tests;
+package com.stiggley.tests;
+
 import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,7 +18,7 @@ import com.stiggley.Application;
  *
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringBootTest(classes=TestDriver.class, properties="/pebbles-user/src/test/resources/application.properties", webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
+@SpringBootTest(classes=TestDriver.class, properties="/stiggley-user/src/test/resources/application.properties", webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 @ContextConfiguration(classes=Application.class)
 
 public class TestDriver {
