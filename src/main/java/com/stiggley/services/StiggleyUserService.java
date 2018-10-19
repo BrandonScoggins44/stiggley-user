@@ -14,16 +14,16 @@ import com.stiggley.repositories.StiggleyUserRepository;
 public class StiggleyUserService {
 
 	@Autowired
-	StiggleyUserRepository bamUserRepo;
+	StiggleyUserRepository stiggleyUserRepo;
 
 	/**
-	* Retrieves a List of all BamUsers from a database.
+	* Retrieves a List of all StiggleyUsers from a database.
 	* 
-	*@return A List of all BamUsers from the database.
+	*@return A List of all StiggleyUsers from the database.
 	*@author Brandon Scoggins, Batch: 1806-Jun18-Java-USF, Trainer: Wezley Singleton
 	*/
 	public List<StiggleyUser> findAllUsers() {
-		return bamUserRepo.findAll();
+		return stiggleyUserRepo.findAll();
 	}
 
 	/**
@@ -34,7 +34,7 @@ public class StiggleyUserService {
 	*@author Brandon Scoggins, Batch: 1806-Jun18-Java-USF, Trainer: Wezley Singleton
 	*/
 	public StiggleyUser findUserById(Integer id) {
-		return bamUserRepo.findBamUserById(id);
+		return stiggleyUserRepo.findStiggleyUserById(id);
 	}
 
 	/**
@@ -45,7 +45,7 @@ public class StiggleyUserService {
 	*@author Brandon Scoggins, Batch: 1806-Jun18-Java-USF, Trainer: Wezley Singleton
 	*/
 	public StiggleyUser addUser(StiggleyUser newUser) {
-		return bamUserRepo.save(newUser);
+		return stiggleyUserRepo.save(newUser);
 	}
 
 	/**
@@ -56,7 +56,7 @@ public class StiggleyUserService {
 	*@author Brandon Scoggins, Batch: 1806-Jun18-Java-USF, Trainer: Wezley Singleton
 	*/
 	public StiggleyUser loginUser(StiggleyUser user) {
-		return bamUserRepo.findBamUserByEmail(user.getEmail());
+		return stiggleyUserRepo.findStiggleyUserByEmail(user.getEmail());
 	}
 
 	/**
@@ -67,12 +67,12 @@ public class StiggleyUserService {
 	*@author Brandon Scoggins, Batch: 1806-Jun18-Java-USF, Trainer: Wezley Singleton
 	*/
 	public StiggleyUser updateUser(StiggleyUser updatedUser) {
-		StiggleyUser user = bamUserRepo.findBamUserById(updatedUser.getId());
+		StiggleyUser user = stiggleyUserRepo.findStiggleyUserById(updatedUser.getId());
 		
 		if(user == null) {
 			return user;
 		} else {
-			return bamUserRepo.save(updatedUser);
+			return stiggleyUserRepo.save(updatedUser);
 		}
 	}
 }

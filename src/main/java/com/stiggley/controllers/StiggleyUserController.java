@@ -33,9 +33,9 @@ public class StiggleyUserController {
 	private static final Logger logger = LogManager.getLogger(StiggleyUserController.class);
 
 	/**
-	 * Retrieves a List of all BamUsers from a database.
+	 * Retrieves a List of all StiggleyUsers from a database.
 	 *
-	 * @return A List of BamUsers from a database, and a corresponding Http Status
+	 * @return A List of StiggleyUsers from a database, and a corresponding Http Status
 	 *         Code in a ResponseEntity
 	 * @author Brandon Scoggins, Batch: 1806-Jun18-Java-USF, Trainer: Wezley
 	 *         Singleton

@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Implementation-Title: stiggley-user
 Implementation-Version: 0.0.1-SNAPSHOT
 Built-By: brand
-Implementation-Vendor-Id: com.revature
+Implementation-Vendor-Id: com.stiggley
 Build-Jdk: 1.8.0_181
 Implementation-URL: http://projects.spring.io/spring-boot/stiggley-use
  r/

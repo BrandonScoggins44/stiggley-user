@@ -2,18 +2,17 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.revature</groupId>
+	<groupId>com.stiggley</groupId>
 	<artifactId>stiggley-user</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>stiggley-user</name>
-	<description>The Bam User Service</description>
+	<description>The Stiggley User Service</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
 	</properties>
-
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -28,7 +27,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-					<mainClass>com.revature.Application</mainClass>
+					<mainClass>com.stiggley.Application</mainClass>
 					<addResources>true</addResources>
 				</configuration>
 				<executions>
@@ -76,10 +75,7 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dependency>
-
-		<!-- Dev Tools <dependency> <groupId>org.springframework.boot</groupId> 
-			<artifactId>spring-boot-devtools</artifactId> <scope>runtime</scope> </dependency> -->
+		</dependency>		
 
 		<!-- H2 Database -->
 		<dependency>
@@ -183,6 +179,8 @@
 			<artifactId>spring-boot-starter-log4j2</artifactId>
 		</dependency>
 
+		<!-- Dev Tools -->
+		
 	</dependencies>
 
 </project>
